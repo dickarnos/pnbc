@@ -1020,14 +1020,15 @@ abbr {
     }
 
     .footer-links a {
-        font-size: 0.92rem;
         transition: all var(--transition-slow);
         display: inline-block;
         position: relative;
+        transition: all var(--transition-slow);
     }
 
     .footer-links a:hover {
         color: var(--cyan-hover);
+        transform: scale(1.05);
     }
 
 
@@ -1040,19 +1041,22 @@ abbr {
     }
 
     .footer-contact li {
+        text-wrap: nowrap;
         display: flex;
         gap: 10px;
-        font-size: 0.92rem;
-        line-height: 1.6;
     }
 
-    .footer-contact li span {
+    .footer-contact li a span {
         flex-shrink: 0;
         font-size: 1.05rem;
+    }
+    .footer-contact a {
+        transition: all var(--transition);
     }
 
     .footer-contact a:hover {
         color: var(--cyan-hover);
+        transform: scale(1.05);
     }
 
     /* ---- Bas du footer ---- */
@@ -1175,19 +1179,6 @@ abbr {
 .legal-content strong {
     color: var(--dark);
     font-weight: 700;
-}
-
-.legal-back {
-    display: inline-block;
-    margin-top: 30px;
-    background: var(--accent);
-    color: var(--dark);
-    border: none;
-}
-
-.legal-back:hover {
-    background: var(--dark);
-    color: var(--white);
 }
 
 /* ==========================================
@@ -1421,6 +1412,9 @@ abbr {
     }
     /* La première colonne (logo + description) prend toute la largeur */
     .footer-col:first-child {
+        grid-column: 1 / -1;
+    }
+    .footer-col:last-child {
         grid-column: 1 / -1;
     }
     .footer-bottom {
